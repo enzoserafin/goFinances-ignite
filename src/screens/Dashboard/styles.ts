@@ -3,19 +3,20 @@ import styled from 'styled-components/native';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { getBottomSpace, getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-import { Feather } from '@expo/vector-icons'
+import { Feather } from '@expo/vector-icons';
 
 import { DataListProps } from '.';
+import { BorderlessButton } from 'react-native-gesture-handler';
 
 export const Container = styled.View`
     flex: 1;
-    background-color: ${({ theme }) => theme.color.background};
+    background-color: ${({ theme }) => theme.colors.background};
 `;
 
 export const Header = styled.View`
     width: 100%;
     height: ${RFPercentage(42)}px;
-    background-color: ${({ theme }) => theme.color.primary};
+    background-color: ${({ theme }) => theme.colors.primary};
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
@@ -45,21 +46,23 @@ export const User = styled.View`
     margin-left: 17px;
 `;
 export const UserGreeting = styled.Text`
-    color: ${({ theme }) => theme.color.shape};
+    color: ${({ theme }) => theme.colors.shape};
     font-size: ${RFValue(18)}px;
     font-family: ${({ theme }) => theme.fonts.regular};
 `;
 
 export const UserName = styled.Text`
-    color: ${({ theme }) => theme.color.shape};
+    color: ${({ theme }) => theme.colors.shape};
     font-size: ${RFValue(18)}px;
     font-family: ${({ theme }) => theme.fonts.bold};
 `;
 
+export const LogoutButton = styled(BorderlessButton)``;
+
 export const Icon = styled(Feather).attrs({
     name: "power",
 })`
-    color: ${({ theme }) => theme.color.secondary};
+    color: ${({ theme }) => theme.colors.secondary};
     font-size: ${RFValue(24)}px;
 `;
 
